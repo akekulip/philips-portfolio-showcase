@@ -9,7 +9,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Grid Resilience Simulator using FDNA",
-      date: "2022",
+      date: "2025",
       organization: "Research Project",
       description: "Developed a simulator using Functional Dependency Network Analysis (FDNA) to model and analyze power grid resilience against cyber-physical attacks. The tool helps utilities identify vulnerabilities and optimize resource allocation for enhanced protection.",
       image: "/lovable-uploads/4efd6ee8-b6b5-4a83-b9d8-1699843608a6.png",
