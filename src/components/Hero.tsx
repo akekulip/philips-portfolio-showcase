@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, FileText, Mail } from "lucide-react";
+import { ArrowDown, FileText, Mail, Github, Linkedin } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -26,7 +26,7 @@ const Hero = () => {
               Specializing in Digital Forensics, Risk Assessment, and Cyber Resilience to protect critical infrastructure and businesses from evolving threats.
             </p>
             
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mb-8">
               <Button asChild className="bg-cyber-blue hover:bg-cyber-blue/90 text-white">
                 <a href="mailto:akekulip@gmail.com">
                   <Mail className="mr-2 h-4 w-4" /> Contact Me
@@ -37,6 +37,57 @@ const Hero = () => {
                   <FileText className="mr-2 h-4 w-4" /> View Projects
                 </a>
               </Button>
+            </div>
+            
+            {/* Social Media Icons */}
+            <div className="flex space-x-8 mb-8">
+              <a 
+                href="https://github.com/akekulip" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-cyber-blue transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="h-8 w-8" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/akekudaga-philip-49557683/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-cyber-blue transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-8 w-8" />
+              </a>
+              <a 
+                href="https://www.kaggle.com/philipakekudaga" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-cyber-blue transition-colors"
+                aria-label="Kaggle"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  className="h-8 w-8"
+                >
+                  <path d="M12 2L2 12l10 10 10-10z" />
+                  <path d="M5 9l4 4" />
+                  <path d="M9 5l6 6" />
+                </svg>
+              </a>
+              <a 
+                href="mailto:akekulip@gmail.com" 
+                className="hover:text-cyber-blue transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="h-8 w-8" />
+              </a>
             </div>
           </div>
           
