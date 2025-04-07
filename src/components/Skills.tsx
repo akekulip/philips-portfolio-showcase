@@ -11,7 +11,8 @@ import {
   Lock,
   Shield,
   Database,
-  ServerCog
+  ServerCog,
+  Languages
 } from "lucide-react";
 
 const Skills = () => {
@@ -70,6 +71,15 @@ const Skills = () => {
       icon: <FileCode className="h-6 w-6 text-cyber-blue" />,
       title: "CRM AND ERP",
       skills: ["Jira", "Mambu", "Microsoft Dynamic NAV 365", "Ebiz-Frame", "SAP", "Freshworks Suite"]
+    },
+    {
+      icon: <Languages className="h-6 w-6 text-cyber-blue" />,
+      title: "Languages",
+      skills: [
+        "English (Professional working proficiency)",
+        "Kasem (Native or bilingual proficiency)",
+        "Twi (Professional working proficiency)"
+      ]
     },
     {
       icon: <CheckCircle2 className="h-6 w-6 text-cyber-blue" />,
