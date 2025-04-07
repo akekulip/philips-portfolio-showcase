@@ -40,7 +40,7 @@ const Hero = () => {
             </div>
             
             {/* Social Media Icons */}
-            <div className="flex space-x-8 mb-8">
+            <div className="flex justify-center md:justify-start space-x-12 mb-10 max-w-lg">
               <a 
                 href="https://github.com/akekulip" 
                 target="_blank" 
@@ -48,7 +48,7 @@ const Hero = () => {
                 className="hover:text-cyber-blue transition-colors"
                 aria-label="GitHub"
               >
-                <Github className="h-8 w-8" />
+                <Github className="h-10 w-10" />
               </a>
               <a 
                 href="https://www.linkedin.com/in/akekudaga-philip-49557683/" 
@@ -57,7 +57,7 @@ const Hero = () => {
                 className="hover:text-cyber-blue transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-8 w-8" />
+                <Linkedin className="h-10 w-10" />
               </a>
               <a 
                 href="https://www.kaggle.com/philipakekudaga" 
@@ -74,7 +74,7 @@ const Hero = () => {
                   strokeWidth="2" 
                   strokeLinecap="round" 
                   strokeLinejoin="round"
-                  className="h-8 w-8"
+                  className="h-10 w-10"
                 >
                   <path d="M12 2L2 12l10 10 10-10z" />
                   <path d="M5 9l4 4" />
@@ -86,7 +86,7 @@ const Hero = () => {
                 className="hover:text-cyber-blue transition-colors"
                 aria-label="Email"
               >
-                <Mail className="h-8 w-8" />
+                <Mail className="h-10 w-10" />
               </a>
             </div>
           </div>
