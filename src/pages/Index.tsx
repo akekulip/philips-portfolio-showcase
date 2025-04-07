@@ -11,15 +11,14 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
-  // Initialize dark mode based on system preference
+  // Initialize dark mode as the default theme
   useEffect(() => {
-    if (
-      localStorage.theme === 'dark' || 
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      document.documentElement.classList.add('dark');
-    } else {
+    // Set dark theme as default unless light theme is explicitly set
+    if (localStorage.theme === 'light') {
       document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'dark';
     }
   }, []);
 

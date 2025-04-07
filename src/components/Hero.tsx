@@ -45,7 +45,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-cyber-blue/20 blur-xl rounded-full -m-4 transform rotate-3"></div>
               <div className="relative rounded-3xl overflow-hidden border-4 border-white dark:border-cyber-navy shadow-xl">
                 <img 
-                  src="/lovable-uploads/d975f225-1df4-49f2-a3b4-72951b41d1f5.png" 
+                  src="/lovable-uploads/45ededff-92a3-44a6-9ecd-86e33e61a746.png" 
                   alt="Philip Akekudaga" 
                   className="w-full h-auto object-cover" 
                 />
