@@ -23,16 +23,29 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
-      <Hero />
-      <About />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Education />
-      <Contact />
-      <Footer />
+    <div className="min-h-screen bg-background text-foreground relative">
+      {/* Subtle background image with overlay */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white dark:from-cyber-navy dark:to-gray-900 opacity-95"></div>
+        <img 
+          src="/lovable-uploads/da2aa60b-dc63-4e61-89fc-6816c0dc78ba.png" 
+          alt="" 
+          className="absolute inset-0 w-full h-full object-cover opacity-5 dark:opacity-3 mix-blend-overlay"
+        />
+      </div>
+      
+      {/* Content with higher z-index */}
+      <div className="relative z-10">
+        <Navigation />
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Education />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };
