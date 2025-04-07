@@ -12,9 +12,9 @@ const Projects = () => {
       date: "2022",
       organization: "Research Project",
       description: "Developed a simulator using Functional Dependency Network Analysis (FDNA) to model and analyze power grid resilience against cyber-physical attacks. The tool helps utilities identify vulnerabilities and optimize resource allocation for enhanced protection.",
-      image: "/lovable-uploads/ba74a5fc-e353-4bc7-802c-40dcbdd16dec.png",
+      image: "/lovable-uploads/4efd6ee8-b6b5-4a83-b9d8-1699843608a6.png",
       tags: ["Python", "Network Analysis", "Simulation", "Security Modeling"],
-      link: "https://github.com/akekulip"
+      link: "https://grid-resilience-simulator.vercel.app/"
     },
     {
       title: "Phishing Impact Assessment Tool",
