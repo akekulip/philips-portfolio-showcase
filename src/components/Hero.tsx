@@ -38,7 +38,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button variant="outline" asChild className="border-cyber-blue text-cyber-blue hover:bg-cyber-blue/10 dark:border-cyber-blue dark:text-cyber-blue">
-                <a href="/Philip_Akekudaga_CV.pdf" download>
+                <a href="Philip_Akekudaga_CV.pdf" download>
                   <Download className="mr-2 h-4 w-4" /> Download CV
                 </a>
               </Button>
