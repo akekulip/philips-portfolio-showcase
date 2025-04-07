@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="flex flex-col items-center">
           <h2 className="text-2xl font-bold mb-6">Philip Akekudaga</h2>
           
-          <div className="flex space-x-6 mb-8">
+          <div className="flex space-x-8 mb-8">
             <a 
               href="https://github.com/akekulip" 
               target="_blank" 
@@ -24,7 +24,7 @@ const Footer = () => {
               className="hover:text-cyber-blue transition-colors"
               aria-label="GitHub"
             >
-              <Github className="h-6 w-6" />
+              <Github className="h-8 w-8" />
             </a>
             <a 
               href="https://www.linkedin.com/in/akekudaga-philip-49557683/" 
@@ -33,14 +33,36 @@ const Footer = () => {
               className="hover:text-cyber-blue transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin className="h-6 w-6" />
+              <Linkedin className="h-8 w-8" />
+            </a>
+            <a 
+              href="https://www.kaggle.com/philipakekudaga" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-cyber-blue transition-colors"
+              aria-label="Kaggle"
+            >
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                className="h-8 w-8"
+              >
+                <path d="M12 2L2 12l10 10 10-10z" />
+                <path d="M5 9l4 4" />
+                <path d="M9 5l6 6" />
+              </svg>
             </a>
             <a 
               href="mailto:akekulip@gmail.com" 
               className="hover:text-cyber-blue transition-colors"
               aria-label="Email"
             >
-              <Mail className="h-6 w-6" />
+              <Mail className="h-8 w-8" />
             </a>
           </div>
           
