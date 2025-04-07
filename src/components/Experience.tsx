@@ -1,8 +1,9 @@
 
 import React from "react";
-import { Briefcase, Calendar } from "lucide-react";
+import { Briefcase, Calendar, Building, HandHelping } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 const Experience = () => {
   const experiences = [
@@ -99,6 +100,46 @@ const Experience = () => {
     }
   ];
 
+  const volunteeringConsulting = [
+    {
+      title: "Web Developer",
+      organization: "Awecif Foundation",
+      location: "Ghana",
+      period: "Jun 2012 - Present",
+      description: [
+        "Volunteering as a web developer for children's programs",
+        "Maintaining and developing the foundation's web presence",
+        "Supporting digital initiatives focused on improving children's lives"
+      ],
+      cause: "Children",
+      type: "Volunteering"
+    },
+    {
+      title: "Technology Consultant",
+      organization: "Brics Africa Consulting LLC",
+      location: "Ghana",
+      period: "Mar 2023 - Present",
+      description: [
+        "Providing technology consulting services to businesses in Africa",
+        "Advising on technology implementation and digital transformation",
+        "Supporting science and technology initiatives across the region"
+      ],
+      cause: "Science and Technology",
+      type: "Consulting"
+    }
+  ];
+
+  const getTypeIcon = (type) => {
+    switch (type) {
+      case "Volunteering":
+        return <HandHelping className="mr-2 h-4 w-4" />;
+      case "Consulting":
+        return <Building className="mr-2 h-4 w-4" />;
+      default:
+        return <Briefcase className="mr-2 h-4 w-4" />;
+    }
+  };
+
   return (
     <section id="experience" className="section-container bg-gray-50 dark:bg-gray-900">
       <h2 className="section-title">Professional Experience</h2>
@@ -147,6 +188,51 @@ const Experience = () => {
                 <div className="md:w-2/3 p-6">
                   <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
                     {job.description.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      <Separator className="my-12" />
+      
+      <h2 className="section-title">Volunteering & Consulting</h2>
+      <div className="space-y-8 mt-8">
+        {volunteeringConsulting.map((role, index) => (
+          <Card key={index} className="border-none shadow-md hover:shadow-xl transition-shadow">
+            <CardContent className="p-0">
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-1/3 bg-cyber-green/5 dark:bg-cyber-green/10 p-6">
+                  <h3 className="text-xl font-bold mb-1 text-cyber-navy dark:text-white">
+                    {role.title}
+                    <Badge variant="outline" className="ml-2 text-xs bg-cyber-green/10">
+                      {role.type}
+                    </Badge>
+                  </h3>
+                  <p className="text-lg font-semibold mb-3 text-cyber-green">{role.organization}</p>
+                  
+                  <div className="flex items-center mb-2 text-cyber-slate dark:text-gray-300">
+                    {getTypeIcon(role.type)}
+                    <span>{role.cause || "N/A"}</span>
+                  </div>
+                  
+                  <div className="flex items-center mb-4 text-cyber-slate dark:text-gray-300">
+                    <Calendar className="mr-2 h-4 w-4" />
+                    <span>{role.period}</span>
+                  </div>
+                  
+                  <div className="text-cyber-slate dark:text-gray-300">
+                    <p>{role.location}</p>
+                  </div>
+                </div>
+                
+                <div className="md:w-2/3 p-6">
+                  <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+                    {role.description.map((item, idx) => (
                       <li key={idx}>{item}</li>
                     ))}
                   </ul>

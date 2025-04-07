@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Briefcase, Calendar, School, Award, ExternalLink } from "lucide-react";
+import { Briefcase, Calendar, School, Award, HandHelping, Building } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -19,6 +19,18 @@ const Timeline = () => {
         "Gathering requirement, data and ideas needed by industry to collaborate with students and academia",
         "Coordinating with staff to organize events, identify talents and run the daily activities of the center",
         "Designing the business process flows and policies for implementations of programs"
+      ]
+    },
+    {
+      title: "Technology Consultant",
+      organization: "Brics Africa Consulting LLC",
+      location: "Ghana",
+      period: "March 2023 - Present",
+      type: "consulting",
+      description: [
+        "Providing technology consulting services to businesses in Africa",
+        "Advising on technology implementation and digital transformation",
+        "Supporting science and technology initiatives across the region"
       ]
     },
     {
@@ -78,6 +90,18 @@ const Timeline = () => {
       ]
     },
     {
+      title: "Web Developer (Volunteer)",
+      organization: "Awecif Foundation",
+      location: "Ghana",
+      period: "June 2012 - Present",
+      type: "volunteering",
+      description: [
+        "Volunteering as a web developer for children's programs",
+        "Maintaining and developing the foundation's web presence",
+        "Supporting digital initiatives focused on improving children's lives"
+      ]
+    },
+    {
       title: "CyberSecurity Consultant",
       organization: "Freelance",
       location: "Accra, Ghana",
@@ -106,6 +130,10 @@ const Timeline = () => {
         return <School className="h-5 w-5 text-cyber-green dark:text-cyber-green" />;
       case "award":
         return <Award className="h-5 w-5 text-amber-500 dark:text-amber-400" />;
+      case "volunteering":
+        return <HandHelping className="h-5 w-5 text-purple-500 dark:text-purple-400" />;
+      case "consulting":
+        return <Building className="h-5 w-5 text-orange-500 dark:text-orange-400" />;
       default:
         return <Calendar className="h-5 w-5 text-cyber-slate dark:text-gray-400" />;
     }
@@ -130,13 +158,21 @@ const Timeline = () => {
                 <div key={index} className="relative">
                   <div className="flex">
                     {/* Icon on timeline */}
-                    <div className="z-10 mt-1.5 -ml-2.5 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-gray-800 border-2 border-cyber-blue dark:border-cyber-blue shadow-md">
+                    <div className={`z-10 mt-1.5 -ml-2.5 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-gray-800 border-2 ${
+                      event.type === 'volunteering' ? 'border-purple-500' : 
+                      event.type === 'consulting' ? 'border-orange-500' : 
+                      'border-cyber-blue'
+                    } dark:border-opacity-80 shadow-md`}>
                       {getIcon(event.type)}
                     </div>
 
                     {/* Content */}
                     <div className="ml-4 flex-grow">
-                      <Card className="border-none shadow-md hover:shadow-xl transition-shadow dark:bg-gray-800/75 backdrop-blur-sm">
+                      <Card className={`border-none shadow-md hover:shadow-xl transition-shadow dark:bg-gray-800/75 backdrop-blur-sm ${
+                        event.type === 'volunteering' ? 'border-l-4 border-l-purple-500' : 
+                        event.type === 'consulting' ? 'border-l-4 border-l-orange-500' : 
+                        ''
+                      }`}>
                         <CardContent className="p-6">
                           <div className="flex flex-col md:flex-row justify-between gap-2">
                             <div>
