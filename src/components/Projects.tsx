@@ -18,12 +18,12 @@ const Projects = () => {
     },
     {
       title: "Phishing Impact Assessment Tool",
-      date: "2021",
+      date: "2024",
       organization: "Security Initiative",
-      description: "Created a comprehensive tool to quantify the potential business impact of phishing attacks based on organizational data, user access patterns, and industry benchmarks. The solution helps businesses prioritize security investments.",
-      image: "/lovable-uploads/66136ddf-30a0-4d0b-8d37-17a2c0b84aa4.png",
-      tags: ["Risk Assessment", "Data Analysis", "Python", "Visualization"],
-      link: "https://github.com/akekulip"
+      description: "Developed an interactive tool that quantifies the potential business impact of phishing attacks based on company profile, user access patterns, and industry benchmarks. The platform provides detailed risk breakdowns across financial, operational, reputational, and systems dimensions.",
+      image: "/lovable-uploads/bebfd17e-ddc4-492d-918e-74d9c94b357c.png",
+      tags: ["Risk Assessment", "Data Visualization", "Financial Modeling", "Security Analytics"],
+      link: "https://phish-base.vercel.app/"
     },
     {
       title: "Cyber Threat Intelligence Platform",
