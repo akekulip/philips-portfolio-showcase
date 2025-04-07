@@ -2,6 +2,7 @@
 import React from "react";
 import { Briefcase, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const Experience = () => {
   const experiences = [
@@ -17,7 +18,8 @@ const Experience = () => {
         "Coordinated with staff to organize events, identify talents and run the daily activities of the center",
         "Designed the business process flows and policies for implementations of programs"
       ],
-      department: "UAlbany Innovation Center"
+      department: "UAlbany Innovation Center",
+      type: "Part-time"
     },
     {
       title: "Lead Business and Systems Analyst",
@@ -29,7 +31,9 @@ const Experience = () => {
         "Analyzed complex datasets and developed 30+ strategic reports, driving data-driven decisions and enhancing cybersecurity posture",
         "Designed 10+ system requirements, led implementation projects, conducted security audits, and deployed VPNs and EDR solutions to protect 200+ endpoints"
       ],
-      department: "IT"
+      department: "IT",
+      type: "Full-time",
+      skills: ["Agile Project Management", "Customer Relationship Management (CRM)"]
     },
     {
       title: "Framework Implementation Lead",
@@ -58,11 +62,40 @@ const Experience = () => {
       location: "Accra, Ghana",
       period: "Jan 2022 - Feb 2023",
       description: [
+        "Analyzed Business processes, Policies and procedures to ensure efficiency in sales, Marketing and Logistics",
         "Developed Power BI and Excel dashboards for sales and logistics, resulting in data-driven decision-making and saving 120 man-hours per month by reducing report preparation time by 20%",
         "Audited on 1000+ outlets, leading to a 17% improvement in compliance adherence and a 6% reduction in credit risk through enhanced forecasting and risk assessment",
         "Analyzed business processes using tools such as CRM, SAP, and BPMN, resulting in a 15% improvement in process efficiency and ensuring alignment with organizational goals"
       ],
-      department: "Voltic GH"
+      department: "Voltic GH",
+      type: "Full-time",
+      skills: ["SAP FICO", "Microsoft Power BI"]
+    },
+    {
+      title: "DMS-SFA Analyst and Support",
+      company: "Wilmar Africa Limited",
+      location: "Tema, Greater Accra, Ghana",
+      period: "May 2021 - Jan 2022",
+      description: [
+        "Provided solutions to problems by looking into business data",
+        "Automated Replenishment System, Distributor Management System, Sales Force Automation",
+        "Implemented SAP solutions for business process optimization"
+      ],
+      type: "Full-time",
+      skills: ["SAP Successfactors", "Microsoft Power BI"]
+    },
+    {
+      title: "IT & MIS OFFICER",
+      company: "Ghana Water Company Ltd.",
+      location: "Kumasi, Ashanti, Ghana",
+      period: "Oct 2015 - May 2021",
+      description: [
+        "Data Processing, Data Analysis, MIS, ITIL, Billing",
+        "Managed information systems and implemented data analysis protocols",
+        "Oversaw IT infrastructure and technical support services"
+      ],
+      type: "Full-time",
+      skills: ["Management Information Systems (MIS)", "Data Analysis"]
     }
   ];
 
@@ -76,7 +109,14 @@ const Experience = () => {
             <CardContent className="p-0">
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3 bg-cyber-blue/5 dark:bg-cyber-blue/10 p-6">
-                  <h3 className="text-xl font-bold mb-1 text-cyber-navy dark:text-white">{job.title}</h3>
+                  <h3 className="text-xl font-bold mb-1 text-cyber-navy dark:text-white">
+                    {job.title}
+                    {job.type && (
+                      <Badge variant="outline" className="ml-2 text-xs bg-cyber-blue/10">
+                        {job.type}
+                      </Badge>
+                    )}
+                  </h3>
                   <p className="text-lg font-semibold mb-3 text-cyber-blue">{job.company}</p>
                   
                   <div className="flex items-center mb-2 text-cyber-slate dark:text-gray-300">
@@ -92,6 +132,16 @@ const Experience = () => {
                   <div className="text-cyber-slate dark:text-gray-300">
                     <p>{job.location}</p>
                   </div>
+
+                  {job.skills && job.skills.length > 0 && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {job.skills.map((skill, skillIdx) => (
+                        <Badge key={skillIdx} variant="secondary" className="text-xs">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 
                 <div className="md:w-2/3 p-6">
