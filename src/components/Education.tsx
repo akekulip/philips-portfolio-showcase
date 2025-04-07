@@ -28,7 +28,40 @@ const Education = () => {
   const certifications = [
     {
       name: "Certified Information Systems Security Professional (CISSP)",
+      issuer: "ISC²",
       date: "Expected in May 2026"
+    },
+    {
+      name: "(ISC)² Candidate",
+      issuer: "ISC2",
+      date: "Nov 2022 - Nov 2023"
+    },
+    {
+      name: "OPSWAT Introduction to Critical Infrastructure Protection (ICIP)",
+      issuer: "OPSWAT",
+      date: "Nov 2022 - Nov 2023"
+    },
+    {
+      name: "Google IT Support",
+      issuer: "Google",
+      date: "May 2022",
+      credentialId: "SN37S2NR8U47"
+    },
+    {
+      name: "ISO/IEC 27001 INFORMATION SECURITY ASSOCIATE™",
+      issuer: "SkillFront",
+      date: "Jan 2022",
+      credentialId: "83377168793210"
+    },
+    {
+      name: "Google Data Analysis Professional",
+      issuer: "Google",
+      date: "Sep 2021"
+    },
+    {
+      name: "Fibre Optics technician",
+      issuer: "JOHVIC Fiber Optics and Associates",
+      date: "May 2014"
     },
     {
       name: "Black Hills Information Security SOC Training",
@@ -123,7 +156,7 @@ const Education = () => {
                 <Award className="mr-2 h-5 w-5 text-cyber-blue" /> Certifications
               </h4>
               
-              <ul className="space-y-3">
+              <ul className="space-y-3 max-h-96 overflow-y-auto pr-2">
                 {certifications.map((cert, index) => (
                   <li key={index} className="flex items-start">
                     <div className="h-5 w-5 mr-2 flex-shrink-0">
@@ -131,7 +164,9 @@ const Education = () => {
                     </div>
                     <div>
                       <p className="text-gray-700 dark:text-gray-300 font-medium">{cert.name}</p>
+                      {cert.issuer && <p className="text-sm text-cyber-slate dark:text-gray-400">{cert.issuer}</p>}
                       {cert.date && <p className="text-sm text-cyber-slate dark:text-gray-400">{cert.date}</p>}
+                      {cert.credentialId && <p className="text-xs text-cyber-slate dark:text-gray-500">ID: {cert.credentialId}</p>}
                     </div>
                   </li>
                 ))}
