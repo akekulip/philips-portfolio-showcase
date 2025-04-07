@@ -7,7 +7,11 @@ import {
   Bug, 
   FileCode, 
   Briefcase,
-  CheckCircle2
+  CheckCircle2,
+  Lock,
+  Shield,
+  Database,
+  ServerCog
 } from "lucide-react";
 
 const Skills = () => {
@@ -15,32 +19,52 @@ const Skills = () => {
     {
       icon: <ShieldCheck className="h-6 w-6 text-cyber-blue" />,
       title: "Cybersecurity Frameworks & Policy",
-      skills: ["ISO 27001", "HIPAA", "NIST (SP 800-37, SP 800-53)", "ICS Matrix", "GDPR"]
+      skills: ["ISO 27001", "HIPAA", "NIST (SP 800-37, SP 800-53)", "ICS Matrix", "GDPR", "PCI-DSS", "COBIT", "SOC 2"]
+    },
+    {
+      icon: <Shield className="h-6 w-6 text-cyber-blue" />,
+      title: "Security Operations",
+      skills: ["SIEM Implementation", "Log Analysis", "Incident Response", "Threat Hunting", "Security Monitoring", "Forensic Analysis"]
+    },
+    {
+      icon: <Lock className="h-6 w-6 text-cyber-blue" />,
+      title: "Network Security",
+      skills: ["Firewall Configuration", "IDS/IPS", "VPN Setup", "DMZ Architecture", "Zero Trust Implementation", "Network Segmentation"]
     },
     {
       icon: <Network className="h-6 w-6 text-cyber-blue" />,
       title: "Networking",
-      skills: ["TCP/IP", "DNS", "OSI Model", "Routing Protocols"]
+      skills: ["TCP/IP", "DNS", "OSI Model", "Routing Protocols", "Subnetting", "Wireshark Analysis"]
     },
     {
       icon: <Bug className="h-6 w-6 text-cyber-blue" />,
       title: "Vulnerability Management & Penetration Testing",
-      skills: ["Virtualbox", "Kali Linux", "Metasploit", "Nmap", "Nessus"]
+      skills: ["Virtualbox", "Kali Linux", "Metasploit", "Nmap", "Nessus", "Burp Suite", "OWASP ZAP", "Security Code Review"]
     },
     {
       icon: <ShieldCheck className="h-6 w-6 text-cyber-blue" />,
       title: "Malware Analysis and Threat Intel",
-      skills: ["Qualys-TruRisk", "OSNIT", "VirusTotal", "Mitre Att&ck"]
+      skills: ["Qualys-TruRisk", "OSNIT", "VirusTotal", "Mitre Att&ck", "Yara Rules", "Sandbox Analysis", "IoC Development"]
+    },
+    {
+      icon: <ServerCog className="h-6 w-6 text-cyber-blue" />,
+      title: "Cloud Security",
+      skills: ["AWS Security", "Azure Security Center", "GCP Security", "Cloud Access Security Brokers", "Container Security", "Kubernetes Security"]
+    },
+    {
+      icon: <Database className="h-6 w-6 text-cyber-blue" />,
+      title: "Data Security & Privacy",
+      skills: ["Data Classification", "DLP Solutions", "Encryption Technologies", "PKI", "Tokenization", "Database Security"]
     },
     {
       icon: <FileCode className="h-6 w-6 text-cyber-blue" />,
       title: "Data Analysis and Programming",
-      skills: ["Microsoft Excel", "SQL", "Power BI", "Redash", "Python", "Machine Learning"]
+      skills: ["Microsoft Excel", "SQL", "Power BI", "Redash", "Python", "Machine Learning", "SIEM Scripting"]
     },
     {
       icon: <Briefcase className="h-6 w-6 text-cyber-blue" />,
       title: "Business Analysis",
-      skills: ["Requirement gathering", "Process optimization", "Process automation"]
+      skills: ["Requirement gathering", "Process optimization", "Process automation", "Risk Assessment", "Security ROI Analysis"]
     },
     {
       icon: <FileCode className="h-6 w-6 text-cyber-blue" />,
@@ -50,7 +74,7 @@ const Skills = () => {
     {
       icon: <CheckCircle2 className="h-6 w-6 text-cyber-blue" />,
       title: "Soft Skills",
-      skills: ["Excellent Oral and written communication skills", "Detail oriented", "Initiative"]
+      skills: ["Excellent Oral and written communication skills", "Detail oriented", "Initiative", "Security Awareness Training", "Stakeholder Management"]
     }
   ];
 
