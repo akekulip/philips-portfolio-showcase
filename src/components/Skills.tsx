@@ -12,7 +12,8 @@ import {
   Shield,
   Database,
   ServerCog,
-  Languages
+  Languages,
+  Award
 } from "lucide-react";
 
 const Skills = () => {
@@ -20,57 +21,57 @@ const Skills = () => {
     {
       icon: <ShieldCheck className="h-6 w-6 text-cyber-blue" />,
       title: "Cybersecurity Frameworks & Policy",
-      skills: ["ISO 27001", "HIPAA", "NIST (SP 800-37, SP 800-53)", "ICS Matrix", "GDPR", "PCI-DSS", "COBIT", "SOC 2"]
+      skills: ["ISO 27001", "HIPAA", "NIST CSF", "NIST SP 800-53", "PCI-DSS", "SOC 2", "SOX", "GDPR", "Vendor & Third-Party Assessments"]
+    },
+    {
+      icon: <Award className="h-6 w-6 text-cyber-blue" />,
+      title: "Risk Quantification & Modeling",
+      skills: ["FAIR", "FAIR-CAM Risk Quantification", "FDNA (Functional Dependency Network Analysis)", "Supply Chain Risk Quantification", "Risk ROI Analysis"]
     },
     {
       icon: <Shield className="h-6 w-6 text-cyber-blue" />,
-      title: "Security Operations",
-      skills: ["SIEM Implementation", "Log Analysis", "Incident Response", "Threat Hunting", "Security Monitoring", "Forensic Analysis"]
+      title: "SIEM & Detection Engineering",
+      skills: ["Microsoft Sentinel (KQL)", "Splunk", "Wazuh", "Detection Rule Tuning", "Log Analysis", "MITRE ATT&CK", "Incident Response Playbooks", "Threat Hunting"]
     },
     {
       icon: <Lock className="h-6 w-6 text-cyber-blue" />,
-      title: "Network Security",
-      skills: ["Firewall Configuration", "IDS/IPS", "VPN Setup", "DMZ Architecture", "Zero Trust Implementation", "Network Segmentation"]
-    },
-    {
-      icon: <Network className="h-6 w-6 text-cyber-blue" />,
-      title: "Networking",
-      skills: ["TCP/IP", "DNS", "OSI Model", "Routing Protocols", "Subnetting", "Wireshark Analysis"]
+      title: "EDR & Endpoint Security",
+      skills: ["CrowdStrike", "Microsoft Defender", "Sophos", "Detection Rule Development", "Threat Hunting Queries", "Endpoint Hardening"]
     },
     {
       icon: <Bug className="h-6 w-6 text-cyber-blue" />,
       title: "Vulnerability Management & Penetration Testing",
-      skills: ["Virtualbox", "Kali Linux", "Metasploit", "Nmap", "Nessus", "Burp Suite", "OWASP ZAP", "Security Code Review"]
+      skills: ["Kali Linux", "Metasploit", "Nmap", "Nessus", "Qualys TruRisk", "MITRE Caldera", "Burp Suite", "Security Assessments"]
     },
     {
       icon: <ShieldCheck className="h-6 w-6 text-cyber-blue" />,
-      title: "Malware Analysis and Threat Intel",
-      skills: ["Qualys-TruRisk", "OSNIT", "VirusTotal", "Mitre Att&ck", "Yara Rules", "Sandbox Analysis", "IoC Development"]
+      title: "Threat Intelligence & OSINT",
+      skills: ["OSINT Fundamentals", "VirusTotal", "MITRE ATT&CK", "Threat Hunting", "IoC Development", "Attacker IP Mapping"]
     },
     {
       icon: <ServerCog className="h-6 w-6 text-cyber-blue" />,
-      title: "Cloud Security",
-      skills: ["AWS Security", "Azure Security Center", "GCP Security", "Cloud Access Security Brokers", "Container Security", "Kubernetes Security"]
+      title: "Cloud & Infrastructure Security",
+      skills: ["Microsoft Azure", "Azure Honeypots", "Cloud Security Monitoring", "Active Directory", "Patch Management", "System Hardening"]
+    },
+    {
+      icon: <FileCode className="h-6 w-6 text-cyber-blue" />,
+      title: "Scripting & Automation",
+      skills: ["Python", "PowerShell", "Security Automation", "Process Automation", "Alert Enrichment", "User Access Review Automation"]
     },
     {
       icon: <Database className="h-6 w-6 text-cyber-blue" />,
-      title: "Data Security & Privacy",
-      skills: ["Data Classification", "DLP Solutions", "Encryption Technologies", "PKI", "Tokenization", "Database Security"]
-    },
-    {
-      icon: <FileCode className="h-6 w-6 text-cyber-blue" />,
-      title: "Data Analysis and Programming",
-      skills: ["Microsoft Excel", "SQL", "Power BI", "Redash", "Python", "Machine Learning", "SIEM Scripting"]
+      title: "Data Analysis & ML",
+      skills: ["Python", "SQL", "Power BI", "Excel", "Redash", "Machine Learning", "Interpretable ML", "Event-Study Analysis"]
     },
     {
       icon: <Briefcase className="h-6 w-6 text-cyber-blue" />,
-      title: "Business Analysis",
-      skills: ["Requirement gathering", "Process optimization", "Process automation", "Risk Assessment", "Security ROI Analysis"]
+      title: "Business Analysis & GRC",
+      skills: ["Requirement Gathering", "BPMN", "BIA/BPA", "Process Optimization", "Archer GRC", "Risk Assessment", "Security ROI Analysis"]
     },
     {
       icon: <FileCode className="h-6 w-6 text-cyber-blue" />,
-      title: "CRM AND ERP",
-      skills: ["Jira", "Mambu", "Microsoft Dynamic NAV 365", "Ebiz-Frame", "SAP", "Freshworks Suite"]
+      title: "Enterprise Systems",
+      skills: ["ServiceNow", "Jira", "Mambu", "Microsoft Dynamics 365", "EbizFrame", "SAP", "Freshworks Suite"]
     },
     {
       icon: <Languages className="h-6 w-6 text-cyber-blue" />,
@@ -84,7 +85,7 @@ const Skills = () => {
     {
       icon: <CheckCircle2 className="h-6 w-6 text-cyber-blue" />,
       title: "Soft Skills",
-      skills: ["Excellent Oral and written communication skills", "Detail oriented", "Initiative", "Security Awareness Training", "Stakeholder Management"]
+      skills: ["Excellent Oral and Written Communication", "Detail-Oriented", "Proactive & Self-Motivated", "Security Awareness Training", "Stakeholder Management"]
     }
   ];
 

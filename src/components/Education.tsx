@@ -7,14 +7,17 @@ const Education = () => {
   const education = [
     {
       institution: "SUNY, University at Albany",
-      degree: "Ms. Digital Forensics and Cybersecurity, Risk, Policy and Compliance",
+      degree: "M.S. Digital Forensics and Cybersecurity, Risk, Policy and Compliance",
       location: "New York, USA",
-      period: "Expected 2026",
-      gpa: "3.78",
+      period: "Expected Dec 2025",
+      gpa: "3.9",
       courses: [
         "Threat Intelligence, Prevention and Protection Strategies and Technologies in Cybersecurity",
         "Information Security Audit",
-        "Advance Networking"
+        "Advanced Networking",
+        "Python",
+        "GIS",
+        "Risk Management"
       ]
     },
     {
@@ -27,9 +30,14 @@ const Education = () => {
 
   const certifications = [
     {
+      name: "CompTIA Security+ (SY0-701)",
+      issuer: "CompTIA",
+      date: "Aug 2025"
+    },
+    {
       name: "Certified Information Systems Security Professional (CISSP)",
       issuer: "ISC²",
-      date: "Expected in May 2026"
+      date: "Exam due in October 2025"
     },
     {
       name: "(ISC)² Candidate",
@@ -87,7 +95,9 @@ const Education = () => {
 
   const affiliations = [
     "National Society of Black Engineers (NSBE) – Collegiate Member",
-    "ISACA – Student Membership"
+    "ISACA – Student Membership",
+    "ISC² Member",
+    "Institute of Electrical and Electronic Engineers (IEEE) – Student Member"
   ];
 
   return (

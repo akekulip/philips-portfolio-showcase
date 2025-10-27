@@ -8,16 +8,40 @@ import { Separator } from "@/components/ui/separator";
 const Experience = () => {
   const experiences = [
     {
+      title: "Cybersecurity Analyst",
+      company: "New York State – Department of Health",
+      location: "Albany, New York",
+      period: "May 2025 - Present",
+      description: [
+        "Investigated and responded to security alerts from Microsoft Sentinel by performing log analysis, fine-tuning detection rules to reduce false positives, and driving incident escalation",
+        "Conducted vulnerability assessments, mapped findings to NIST CSF 2.0, and supported risk remediation tracking using Archer for internal GRC reporting to stakeholders",
+        "Published weekly cybersecurity awareness content through LMS, SharePoint, and websites and participated in phishing simulations to improve organizational security posture",
+        "Drafted and developed Incident Response Plans (IRP) and playbooks for multiple agencies under the Department of Health, standardizing detection, containment, and recovery procedures"
+      ],
+      department: "Office of Health Information Management",
+      type: "Full-time Internship"
+    },
+    {
+      title: "Graduate Assistant",
+      company: "University at Albany",
+      location: "Albany, New York",
+      period: "Aug 2025 - Present",
+      description: [
+        "Curate and analyze PhD program data to support assessment, accreditation, and curriculum decisions",
+        "Provide quantitative briefs on enrollment and curriculum trends for faculty committees"
+      ],
+      department: "College of Emergency Preparedness, Homeland Security & Cybersecurity",
+      type: "Part-time"
+    },
+    {
       title: "Senior Research Aide",
       company: "Research Foundation for SUNY",
       location: "Albany, New York",
-      period: "October 2024 - Present",
+      period: "October 2024 - May 2025",
       description: [
-        "Mined and developed Machine learning models and analysis for establishing 11 Industry Affiliate Programs",
-        "Researched into companies and individuals for collaboration with the center",
-        "Gathered requirement, data and ideas needed by industry to collaborate with students and academia",
-        "Coordinated with staff to organize events, identify talents and run the daily activities of the center",
-        "Designed the business process flows and policies for implementations of programs"
+        "Developed machine learning models to analyze complex datasets, gaining exposure to AI/ML techniques applicable to anomaly detection and predictive security analytics",
+        "Built ML pipelines to analyze opportunity spaces for 11 Industry Affiliate Programs: synthesized requirements linking industry needs with academic capabilities",
+        "Gathered requirement, data and ideas needed by industry to collaborate with students and academia"
       ],
       department: "UAlbany Innovation Center",
       type: "Part-time"
@@ -63,14 +87,14 @@ const Experience = () => {
       location: "Accra, Ghana",
       period: "Jan 2022 - Feb 2023",
       description: [
-        "Analyzed Business processes, Policies and procedures to ensure efficiency in sales, Marketing and Logistics",
-        "Developed Power BI and Excel dashboards for sales and logistics, resulting in data-driven decision-making and saving 120 man-hours per month by reducing report preparation time by 20%",
-        "Audited on 1000+ outlets, leading to a 17% improvement in compliance adherence and a 6% reduction in credit risk through enhanced forecasting and risk assessment",
-        "Analyzed business processes using tools such as CRM, SAP, and BPMN, resulting in a 15% improvement in process efficiency and ensuring alignment with organizational goals"
+        "Led the deployment and optimization of CrowdStrike EDR across 200+ endpoints, developing advanced queries for threat hunting and tuning detection rules to enhance threat visibility",
+        "Created Power BI and Excel dashboards for sales and logistics, enabling data-driven decisions and saving 120+ man-hours per month by reducing report preparation time by 20%",
+        "Audited 1,000+ outlets and vendors in the supply chain, resulting in a 17% increase in compliance and a 6% reduction in risk through improved forecasting and risk analysis",
+        "Analyzed business processes using tools such as CRM, SAP, and BPMN, resulting in a 15% improvement in process efficiency"
       ],
       department: "Voltic GH",
       type: "Full-time",
-      skills: ["SAP FICO", "Microsoft Power BI"]
+      skills: ["SAP FICO", "Microsoft Power BI", "CrowdStrike EDR"]
     },
     {
       title: "DMS-SFA Analyst and Support",
@@ -86,17 +110,19 @@ const Experience = () => {
       skills: ["SAP Successfactors", "Microsoft Power BI"]
     },
     {
-      title: "IT & MIS OFFICER",
+      title: "IT & MIS Officer",
       company: "Ghana Water Company Ltd.",
       location: "Kumasi, Ashanti, Ghana",
-      period: "Oct 2015 - May 2021",
+      period: "Sept 2014 - Jan 2022",
       description: [
-        "Data Processing, Data Analysis, MIS, ITIL, Billing",
-        "Managed information systems and implemented data analysis protocols",
-        "Oversaw IT infrastructure and technical support services"
+        "Managed the complete lifecycle of 800+ user accounts in Active Directory, including provisioning, de-provisioning, and permission auditing to enforce the principle of least privilege",
+        "Implemented and managed a monthly patch management cycle for over 600 endpoints and 50+ servers, achieving and maintaining a 98% patch compliance rate",
+        "Served as the primary responder for IT security incidents, resolving an average of 20+ security-related tickets per week, including malware removal and phishing analysis",
+        "Oversaw daily backup operations for 10+ critical application and file servers, maintaining a 99.5% success rate and performing quarterly data recovery tests to ensure business continuity",
+        "Led a project to securely deploy and configure over 150 new workstations, implementing system hardening baselines that reduced common vulnerabilities by over 90% on new assets"
       ],
       type: "Full-time",
-      skills: ["Management Information Systems (MIS)", "Data Analysis"]
+      skills: ["Active Directory", "Patch Management", "Incident Response", "Data Analysis"]
     }
   ];
 
