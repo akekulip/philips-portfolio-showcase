@@ -18,7 +18,7 @@ const Contact = () => {
     {
       icon: <MapPin className="h-5 w-5 text-cyber-blue" />,
       title: "Location",
-      details: "41 North Lake Ave, Albany, NY-12203"
+      details: "Albany, NY-12203"
     },
     {
       icon: <Mail className="h-5 w-5 text-cyber-blue" />,
