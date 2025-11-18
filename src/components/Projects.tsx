@@ -73,11 +73,12 @@ const Projects = () => {
                     </CardDescription>
                   </div>
                   {project.link && (
-                    <Button variant="ghost" size="icon" asChild className="h-8 w-8 rounded-full">
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label="View project">
-                        <Github className="h-4 w-4" />
-                      </a>
-                    </Button>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label="View project" className="shrink-0">
+                      <Avatar className="h-8 w-8 border-2 border-cyber-blue/30 hover:border-cyber-blue transition-colors">
+                        <AvatarImage src="/lovable-uploads/profile-photo.png" alt="Philip Akekudaga" />
+                        <AvatarFallback>PA</AvatarFallback>
+                      </Avatar>
+                    </a>
                   )}
                 </div>
               </CardHeader>
