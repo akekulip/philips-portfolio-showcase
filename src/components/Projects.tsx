@@ -8,6 +8,15 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const Projects = () => {
   const projects = [
     {
+      title: "FAIR Risk Analysis Platform",
+      date: "2025",
+      organization: "Cybersecurity Research",
+      description: "Developed a comprehensive Factor Analysis of Information Risk (FAIR) platform for quantitative cyber risk assessment. The tool models threat scenarios, calculates annualized loss expectancy, and provides actionable insights for risk mitigation with advanced Monte Carlo simulations and TEF analysis.",
+      image: "/lovable-uploads/fair-risk-analysis.png",
+      tags: ["Risk Quantification", "FAIR Model", "Monte Carlo", "Threat Analysis", "React"],
+      link: "https://fair.akekudaga.com/"
+    },
+    {
       title: "Grid Resilience Simulator using FDNA",
       date: "2025",
       organization: "Research Project",
