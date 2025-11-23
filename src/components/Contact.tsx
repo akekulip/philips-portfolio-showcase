@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
-  MapPin,
   Mail,
   Phone,
   Github,
@@ -25,11 +24,6 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const contactInfo = [
-    {
-      icon: <MapPin className="h-5 w-5 text-cyber-blue" />,
-      title: "Location",
-      details: "Albany, NY-12203"
-    },
     {
       icon: <Mail className="h-5 w-5 text-cyber-blue" />,
       title: "Email",
