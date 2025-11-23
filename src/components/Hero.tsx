@@ -102,8 +102,9 @@ const Hero = () => {
               <div className="relative rounded-3xl overflow-hidden border-4 border-white dark:border-cyber-navy shadow-xl">
                 <img 
                   src="/lovable-uploads/profile-photo.png" 
-                  alt="Philip Akekudaga" 
+                  alt="Philip Akekudaga - Cybersecurity Specialist" 
                   className="w-full h-auto object-cover" 
+                  loading="lazy"
                 />
               </div>
             </div>

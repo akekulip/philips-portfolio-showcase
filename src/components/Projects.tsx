@@ -60,8 +60,9 @@ const Projects = () => {
                   <div className="mb-4 w-full h-48 overflow-hidden rounded-lg">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={`Screenshot of ${project.title} project`}
                       className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                   </div>
                 )}
@@ -91,10 +92,10 @@ const Projects = () => {
                     <span key={idx} className="tech-tag">{tag}</span>
                   ))}
                 </div>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  asChild 
+                <Button
+                  variant="outline"
+                  size="sm"
+                  asChild
                   className="w-full border-cyber-blue text-cyber-blue hover:bg-cyber-blue/10 dark:border-cyber-blue dark:text-cyber-blue"
                 >
                   <a href={project.link} target="_blank" rel="noopener noreferrer">
