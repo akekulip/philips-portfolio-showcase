@@ -14,14 +14,14 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
-  // Initialize dark mode as the default theme
+  // Initialize light mode as the default theme
   useEffect(() => {
-    // Set dark theme as default unless light theme is explicitly set
-    if (localStorage.theme === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
+    // Set light theme as default unless dark theme is explicitly set
+    if (localStorage.theme === 'dark') {
       document.documentElement.classList.add('dark');
-      localStorage.theme = 'dark';
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = 'light';
     }
   }, []);
 
@@ -30,13 +30,13 @@ const Index = () => {
       {/* Subtle background image with overlay */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white dark:from-cyber-navy dark:to-gray-900 opacity-85"></div>
-        <img 
-          src="/lovable-uploads/da2aa60b-dc63-4e61-89fc-6816c0dc78ba.png" 
-          alt="" 
+        <img
+          src="/lovable-uploads/da2aa60b-dc63-4e61-89fc-6816c0dc78ba.png"
+          alt=""
           className="absolute inset-0 w-full h-full object-cover opacity-15 dark:opacity-10 mix-blend-multiply"
         />
       </div>
-      
+
       {/* Content with higher z-index */}
       <div className="relative z-10">
         <Navigation />
