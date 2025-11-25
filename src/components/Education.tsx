@@ -101,107 +101,105 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="section-container">
-      <h2 className="section-title">Education & Certifications</h2>
-      
+    <section id="education" className="section-container bg-gray-50 dark:bg-gray-900/50">
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium tracking-wide">
+          Academic
+        </div>
+        <h2 className="section-title mb-6">Education & Certifications</h2>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <h3 className="section-subtitle">Academic Background</h3>
-          
+        <div className="lg:col-span-2 space-y-8">
+          <h3 className="text-2xl font-heading font-bold text-cyber-navy dark:text-white mb-6 flex items-center">
+            <GraduationCap className="mr-3 h-6 w-6 text-primary" /> Academic Background
+          </h3>
+
           <div className="space-y-6">
             {education.map((item, index) => (
-              <Card key={index} className="border-none shadow-md">
-                <CardContent className="p-6">
-                  <div className="flex items-start mb-4">
-                    <div className="mr-4 mt-1">
-                      <GraduationCap className="h-8 w-8 text-cyber-blue" />
-                    </div>
+              <Card key={index} className="border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all bg-white dark:bg-cyber-navy">
+                <CardContent className="p-8">
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                     <div>
-                      <h4 className="text-xl font-bold text-cyber-navy dark:text-white">{item.institution}</h4>
-                      <p className="text-lg font-medium text-cyber-slate dark:text-gray-300">{item.degree}</p>
+                      <h4 className="text-xl font-heading font-bold text-cyber-navy dark:text-white">{item.institution}</h4>
+                      <p className="text-lg font-medium text-primary mt-1">{item.degree}</p>
+                    </div>
+                    <div className="flex flex-col items-start md:items-end gap-1 text-sm text-gray-500 dark:text-gray-400">
+                      <span className="flex items-center"><Calendar className="mr-1 h-3 w-3" /> {item.period}</span>
+                      <span className="flex items-center"><MapPin className="mr-1 h-3 w-3" /> {item.location}</span>
                     </div>
                   </div>
-                  
-                  <div className="ml-12 space-y-3">
-                    <div className="flex items-center text-cyber-slate dark:text-gray-400">
-                      <MapPin className="mr-2 h-4 w-4" />
-                      <span>{item.location}</span>
+
+                  {item.gpa && (
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-sm font-medium mb-6">
+                      <Award className="mr-1.5 h-3.5 w-3.5" />
+                      GPA: {item.gpa}
                     </div>
-                    
-                    <div className="flex items-center text-cyber-slate dark:text-gray-400">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      <span>{item.period}</span>
+                  )}
+
+                  {item.courses && (
+                    <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
+                      <p className="font-medium text-cyber-navy dark:text-white mb-3 text-sm uppercase tracking-wider">Relevant Courses</p>
+                      <div className="flex flex-wrap gap-2">
+                        {item.courses.map((course, idx) => (
+                          <span key={idx} className="text-sm px-3 py-1 bg-gray-50 dark:bg-gray-800 rounded-full text-gray-600 dark:text-gray-300">
+                            {course}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    
-                    {item.gpa && (
-                      <div className="flex items-center text-cyber-slate dark:text-gray-400">
-                        <Award className="mr-2 h-4 w-4" />
-                        <span>GPA: {item.gpa}</span>
-                      </div>
-                    )}
-                    
-                    {item.courses && (
-                      <div className="mt-4">
-                        <p className="font-medium text-cyber-navy dark:text-white mb-2">Relevant Courses:</p>
-                        <ul className="list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-300">
-                          {item.courses.map((course, idx) => (
-                            <li key={idx}>{course}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
-        
-        <div>
-          <h3 className="section-subtitle">Certifications & Affiliations</h3>
-          
-          <Card className="border-none shadow-md mb-6">
-            <CardContent className="p-6">
-              <h4 className="text-lg font-bold mb-4 text-cyber-navy dark:text-white flex items-center">
-                <Award className="mr-2 h-5 w-5 text-cyber-blue" /> Certifications
-              </h4>
-              
-              <ul className="space-y-3 max-h-96 overflow-y-auto pr-2">
-                {certifications.map((cert, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="h-5 w-5 mr-2 flex-shrink-0">
-                      <div className="w-2 h-2 rounded-full bg-cyber-blue mt-2"></div>
-                    </div>
-                    <div>
-                      <p className="text-gray-700 dark:text-gray-300 font-medium">{cert.name}</p>
-                      {cert.issuer && <p className="text-sm text-cyber-slate dark:text-gray-400">{cert.issuer}</p>}
-                      {cert.date && <p className="text-sm text-cyber-slate dark:text-gray-400">{cert.date}</p>}
-                      {cert.credentialId && <p className="text-xs text-cyber-slate dark:text-gray-500">ID: {cert.credentialId}</p>}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-          
-          <Card className="border-none shadow-md">
-            <CardContent className="p-6">
-              <h4 className="text-lg font-bold mb-4 text-cyber-navy dark:text-white flex items-center">
-                <GraduationCap className="mr-2 h-5 w-5 text-cyber-blue" /> Affiliations
-              </h4>
-              
-              <ul className="space-y-3">
-                {affiliations.map((affiliation, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="h-5 w-5 mr-2 flex-shrink-0">
-                      <div className="w-2 h-2 rounded-full bg-cyber-blue mt-2"></div>
-                    </div>
-                    <p className="text-gray-700 dark:text-gray-300">{affiliation}</p>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+
+        <div className="space-y-8">
+          <div>
+            <h3 className="text-2xl font-heading font-bold text-cyber-navy dark:text-white mb-6 flex items-center">
+              <Award className="mr-3 h-6 w-6 text-primary" /> Certifications
+            </h3>
+
+            <Card className="border border-gray-100 dark:border-gray-800 shadow-sm bg-white dark:bg-cyber-navy">
+              <CardContent className="p-6">
+                <ul className="space-y-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+                  {certifications.map((cert, index) => (
+                    <li key={index} className="flex items-start pb-4 border-b border-gray-100 dark:border-gray-800 last:border-0 last:pb-0">
+                      <div className="mt-1.5 mr-3 w-2 h-2 rounded-full bg-primary shrink-0"></div>
+                      <div>
+                        <p className="text-gray-800 dark:text-gray-200 font-medium leading-snug">{cert.name}</p>
+                        <div className="flex flex-wrap gap-x-3 gap-y-1 mt-1 text-xs text-gray-500 dark:text-gray-400">
+                          {cert.issuer && <span>{cert.issuer}</span>}
+                          {cert.date && <span>• {cert.date}</span>}
+                        </div>
+                        {cert.credentialId && <p className="text-xs text-gray-400 mt-0.5 font-mono">ID: {cert.credentialId}</p>}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-heading font-bold text-cyber-navy dark:text-white mb-6 flex items-center">
+              <GraduationCap className="mr-3 h-6 w-6 text-primary" /> Affiliations
+            </h3>
+
+            <Card className="border border-gray-100 dark:border-gray-800 shadow-sm bg-white dark:bg-cyber-navy">
+              <CardContent className="p-6">
+                <ul className="space-y-3">
+                  {affiliations.map((affiliation, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="mt-2 mr-3 w-1.5 h-1.5 rounded-full bg-primary shrink-0"></div>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{affiliation}</p>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>

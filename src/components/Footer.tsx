@@ -11,35 +11,38 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-cyber-navy text-white py-12">
+    <footer className="bg-cyber-navy text-white py-16 border-t border-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
-          <h2 className="text-2xl font-bold mb-6">Philip Akekudaga</h2>
+          <div className="mb-8 text-center">
+            <h2 className="text-3xl font-heading font-bold mb-2">Philip Akekudaga</h2>
+            <p className="text-gray-400">Cybersecurity Specialist & Risk Analyst</p>
+          </div>
 
-          <div className="flex space-x-8 mb-8">
+          <div className="flex space-x-6 mb-10">
             <a
               href="https://github.com/akekulip"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-cyber-blue transition-colors"
+              className="p-3 bg-gray-800 rounded-full hover:bg-primary hover:text-white transition-all duration-300"
               aria-label="GitHub"
             >
-              <Github className="h-8 w-8" />
+              <Github className="h-6 w-6" />
             </a>
             <a
               href="https://www.linkedin.com/in/akekudaga-philip-49557683/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-cyber-blue transition-colors"
+              className="p-3 bg-gray-800 rounded-full hover:bg-primary hover:text-white transition-all duration-300"
               aria-label="LinkedIn"
             >
-              <Linkedin className="h-8 w-8" />
+              <Linkedin className="h-6 w-6" />
             </a>
             <a
               href="https://www.kaggle.com/philipakekudaga"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-cyber-blue transition-colors"
+              className="p-3 bg-gray-800 rounded-full hover:bg-primary hover:text-white transition-all duration-300"
               aria-label="Kaggle"
             >
               <svg
@@ -50,7 +53,7 @@ const Footer = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-8 w-8"
+                className="h-6 w-6"
               >
                 <path d="M12 2L2 12l10 10 10-10z" />
                 <path d="M5 9l4 4" />
@@ -59,42 +62,38 @@ const Footer = () => {
             </a>
             <a
               href="mailto:akekulip@gmail.com"
-              className="hover:text-cyber-blue transition-colors"
+              className="p-3 bg-gray-800 rounded-full hover:bg-primary hover:text-white transition-all duration-300"
               aria-label="Email"
             >
-              <Mail className="h-8 w-8" />
+              <Mail className="h-6 w-6" />
             </a>
           </div>
 
-          <div className="text-center mb-8">
-            <p className="text-gray-400">(929) 685-9890 • akekulip@gmail.com</p>
-          </div>
-
-          <nav className="mb-8">
-            <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2">
-              <li><a href="#about" className="hover:text-cyber-blue transition-colors">About</a></li>
-              <li><a href="#experience" className="hover:text-cyber-blue transition-colors">Experience</a></li>
-              <li><a href="#skills" className="hover:text-cyber-blue transition-colors">Skills</a></li>
-              <li><a href="#projects" className="hover:text-cyber-blue transition-colors">Projects</a></li>
-              <li><a href="#education" className="hover:text-cyber-blue transition-colors">Education</a></li>
-              <li><a href="#contact" className="hover:text-cyber-blue transition-colors">Contact</a></li>
+          <nav className="mb-10">
+            <ul className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium text-gray-300">
+              <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
+              <li><a href="#experience" className="hover:text-primary transition-colors">Experience</a></li>
+              <li><a href="#skills" className="hover:text-primary transition-colors">Skills</a></li>
+              <li><a href="#projects" className="hover:text-primary transition-colors">Projects</a></li>
+              <li><a href="#education" className="hover:text-primary transition-colors">Education</a></li>
+              <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
             </ul>
           </nav>
 
-          <div className="flex items-center mb-4">
-            <div className="h-px bg-gray-700 flex-grow"></div>
-            <Button
-              onClick={scrollToTop}
-              size="icon"
-              variant="ghost"
-              className="rounded-full mx-4 border border-gray-700 hover:bg-gray-800 hover:text-cyber-blue"
-            >
-              <ArrowUp className="h-5 w-5" />
-            </Button>
-            <div className="h-px bg-gray-700 flex-grow"></div>
+          <div className="w-full max-w-4xl h-px bg-gray-800 mb-8 relative">
+            <div className="absolute left-1/2 -translate-x-1/2 -top-3 bg-cyber-navy px-4">
+              <Button
+                onClick={scrollToTop}
+                size="icon"
+                variant="outline"
+                className="rounded-full border-gray-700 bg-cyber-navy hover:bg-gray-800 hover:text-primary hover:border-primary/50 transition-all"
+              >
+                <ArrowUp className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
 
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-500">
             © {currentYear} Philip Akekudaga. All rights reserved.
           </p>
         </div>

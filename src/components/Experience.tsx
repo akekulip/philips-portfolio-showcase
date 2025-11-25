@@ -167,103 +167,104 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="section-container bg-gray-50 dark:bg-gray-900">
-      <h2 className="section-title">Professional Experience</h2>
-      
-      <div className="space-y-8">
-        {experiences.map((job, index) => (
-          <Card key={index} className="border-none shadow-md hover:shadow-xl transition-shadow">
-            <CardContent className="p-0">
-              <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/3 bg-cyber-blue/5 dark:bg-cyber-blue/10 p-6">
-                  <h3 className="text-xl font-bold mb-1 text-cyber-navy dark:text-white">
-                    {job.title}
-                    {job.type && (
-                      <Badge variant="outline" className="ml-2 text-xs bg-cyber-blue/10">
-                        {job.type}
-                      </Badge>
-                    )}
-                  </h3>
-                  <p className="text-lg font-semibold mb-3 text-cyber-blue">{job.company}</p>
-                  
-                  <div className="flex items-center mb-2 text-cyber-slate dark:text-gray-300">
-                    <Briefcase className="mr-2 h-4 w-4" />
-                    <span>{job.department || job.project || "N/A"}</span>
-                  </div>
-                  
-                  <div className="flex items-center mb-4 text-cyber-slate dark:text-gray-300">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    <span>{job.period}</span>
-                  </div>
-                  
-                  <div className="text-cyber-slate dark:text-gray-300">
-                    <p>{job.location}</p>
-                  </div>
+    <section id="experience" className="section-container bg-gray-50 dark:bg-gray-900/50">
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium tracking-wide">
+          Career Path
+        </div>
+        <h2 className="section-title mb-6">Professional Experience</h2>
+      </div>
 
-                  {job.skills && job.skills.length > 0 && (
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {job.skills.map((skill, skillIdx) => (
-                        <Badge key={skillIdx} variant="secondary" className="text-xs">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                
-                <div className="md:w-2/3 p-6">
-                  <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
-                    {job.description.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
+      <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent dark:before:via-gray-700">
+        {experiences.map((job, index) => (
+          <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+            {/* Icon */}
+            <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white dark:border-gray-900 bg-primary/20 text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+              <Briefcase className="w-4 h-4" />
+            </div>
+
+            {/* Content */}
+            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white dark:bg-cyber-navy border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+                <h3 className="text-xl font-heading font-bold text-cyber-navy dark:text-white">
+                  {job.title}
+                </h3>
+                <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded whitespace-nowrap">
+                  {job.period}
+                </span>
+              </div>
+
+              <div className="mb-4">
+                <p className="text-lg font-medium text-primary mb-1">{job.company}</p>
+                <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
+                  <span className="flex items-center">
+                    <Building className="mr-1 h-3 w-3" /> {job.department || job.project || "N/A"}
+                  </span>
+                  <span className="flex items-center">
+                    <Calendar className="mr-1 h-3 w-3" /> {job.location}
+                  </span>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+
+              <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+                {job.description.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+
+              {job.skills && job.skills.length > 0 && (
+                <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-100 dark:border-gray-800">
+                  {job.skills.map((skill, skillIdx) => (
+                    <Badge key={skillIdx} variant="secondary" className="text-xs font-normal bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
         ))}
       </div>
 
-      <Separator className="my-12" />
-      
-      <h2 className="section-title">Volunteering & Consulting</h2>
-      <div className="space-y-8 mt-8">
+      <Separator className="my-20" />
+
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <h2 className="section-title mb-6">Volunteering & Consulting</h2>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-8">
         {volunteeringConsulting.map((role, index) => (
-          <Card key={index} className="border-none shadow-md hover:shadow-xl transition-shadow">
-            <CardContent className="p-0">
-              <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/3 bg-cyber-green/5 dark:bg-cyber-green/10 p-6">
-                  <h3 className="text-xl font-bold mb-1 text-cyber-navy dark:text-white">
-                    {role.title}
-                    <Badge variant="outline" className="ml-2 text-xs bg-cyber-green/10">
-                      {role.type}
-                    </Badge>
-                  </h3>
-                  <p className="text-lg font-semibold mb-3 text-cyber-green">{role.organization}</p>
-                  
-                  <div className="flex items-center mb-2 text-cyber-slate dark:text-gray-300">
-                    {getTypeIcon(role.type)}
-                    <span>{role.cause || "N/A"}</span>
-                  </div>
-                  
-                  <div className="flex items-center mb-4 text-cyber-slate dark:text-gray-300">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    <span>{role.period}</span>
-                  </div>
-                  
-                  <div className="text-cyber-slate dark:text-gray-300">
-                    <p>{role.location}</p>
-                  </div>
+          <Card key={index} className="border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-all duration-300 bg-white dark:bg-cyber-navy">
+            <CardContent className="p-8">
+              <div className="flex items-start justify-between mb-4">
+                <div className="p-3 bg-green-500/10 rounded-xl text-green-600 dark:text-green-400">
+                  {getTypeIcon(role.type)}
                 </div>
-                
-                <div className="md:w-2/3 p-6">
-                  <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
-                    {role.description.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
+                <Badge variant="outline" className="text-xs border-green-200 text-green-700 dark:border-green-900 dark:text-green-400">
+                  {role.type}
+                </Badge>
               </div>
+
+              <h3 className="text-xl font-heading font-bold mb-2 text-cyber-navy dark:text-white">
+                {role.title}
+              </h3>
+              <p className="text-lg font-medium text-green-600 dark:text-green-400 mb-4">{role.organization}</p>
+
+              <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                <span className="flex items-center">
+                  <Calendar className="mr-1 h-3 w-3" /> {role.period}
+                </span>
+                <span>{role.location}</span>
+              </div>
+
+              <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+                {role.description.map((item, idx) => (
+                  <li key={idx} className="flex items-start">
+                    <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-green-500 rounded-full shrink-0"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </CardContent>
           </Card>
         ))}

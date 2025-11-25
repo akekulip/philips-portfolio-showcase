@@ -14,7 +14,8 @@ const Projects = () => {
       description: "Developed a comprehensive Factor Analysis of Information Risk (FAIR) platform for quantitative cyber risk assessment. The tool models threat scenarios, calculates annualized loss expectancy, and provides actionable insights for risk mitigation with advanced Monte Carlo simulations and TEF analysis.",
       image: "/lovable-uploads/fair-risk-analysis.png",
       tags: ["Risk Quantification", "FAIR Model", "Monte Carlo", "Threat Analysis", "React"],
-      link: "https://fair.akekudaga.com/"
+      link: "https://fair.akekudaga.com/",
+      featured: true
     },
     {
       title: "Grid Resilience Simulator using FDNA",
@@ -23,7 +24,8 @@ const Projects = () => {
       description: "Developed a simulator using Functional Dependency Network Analysis (FDNA) to model and analyze power grid resilience against cyber-physical attacks. The tool helps utilities identify vulnerabilities and optimize resource allocation for enhanced protection.",
       image: "/lovable-uploads/4efd6ee8-b6b5-4a83-b9d8-1699843608a6.png",
       tags: ["Python", "Network Analysis", "Simulation", "Security Modeling"],
-      link: "https://grid-resilience-simulator.vercel.app/"
+      link: "https://grid-resilience-simulator.vercel.app/",
+      featured: false
     },
     {
       title: "Phishing Impact Assessment Tool",
@@ -32,7 +34,8 @@ const Projects = () => {
       description: "Developed an interactive tool that quantifies the potential business impact of phishing attacks based on company profile, user access patterns, and industry benchmarks. The platform provides detailed risk breakdowns across financial, operational, reputational, and systems dimensions.",
       image: "/lovable-uploads/bebfd17e-ddc4-492d-918e-74d9c94b357c.png",
       tags: ["Risk Assessment", "Data Visualization", "Financial Modeling", "Security Analytics"],
-      link: "https://phish-base.vercel.app/"
+      link: "https://phish-base.vercel.app/",
+      featured: false
     },
     {
       title: "Cyber Threat Intelligence Platform",
@@ -40,71 +43,119 @@ const Projects = () => {
       organization: "Professional Project",
       description: "Led the development of an integrated threat intelligence platform that collects, analyzes, and disseminates security threat data across multiple business units. The system reduced average incident response time by 40%.",
       tags: ["Threat Intelligence", "API Integration", "SIEM", "React"],
-      link: "https://github.com/akekulip"
+      link: "https://github.com/akekulip",
+      featured: false
     }
   ];
 
   return (
-    <section id="projects" className="bg-gray-50 dark:bg-gray-900 py-16 md:py-24">
-      <div className="section-container">
-        <h2 className="section-title">Featured Projects</h2>
-        <p className="text-cyber-slate dark:text-gray-400 mb-12 max-w-2xl">
-          Showcasing my work in cybersecurity, risk assessment, and digital resilience. Each project represents my commitment to creating secure digital environments.
-        </p>
+    <section id="projects" className="bg-secondary/30 dark:bg-gray-900/50 py-24 md:py-32 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="section-container relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium tracking-wide">
+            Portfolio
+          </div>
+          <h2 className="section-title mb-6">Featured Projects</h2>
+          <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+            Showcasing my work in cybersecurity, risk assessment, and digital resilience. Each project represents my commitment to creating secure digital environments.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[minmax(400px,auto)]">
           {projects.map((project, index) => (
-            <Card key={index} className="flex flex-col h-full border-none shadow-lg bg-white/70 dark:bg-cyber-navy/70 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
-              <CardHeader className="pb-4">
-                {project.image && (
-                  <div className="mb-4 w-full h-48 overflow-hidden rounded-lg">
-                    <img
-                      src={project.image}
-                      alt={`Screenshot of ${project.title} project`}
-                      className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
+            <div
+              key={index}
+              className={`group relative flex flex-col rounded-3xl overflow-hidden border border-white/50 dark:border-gray-800 bg-white dark:bg-cyber-navy shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 ${project.featured ? 'lg:col-span-2 lg:flex-row' : ''}`}
+            >
+              {/* Image Section */}
+              <div className={`relative overflow-hidden ${project.featured ? 'lg:w-3/5 h-64 lg:h-auto' : 'h-56'}`}>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={`Screenshot of ${project.title} project`}
+                    className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+                    <Github className="h-12 w-12 text-gray-400" />
                   </div>
                 )}
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="text-xl font-bold text-cyber-navy dark:text-white">{project.title}</CardTitle>
-                    <CardDescription className="text-cyber-slate dark:text-gray-400 font-mono">
-                      {project.date} • {project.organization}
-                    </CardDescription>
-                  </div>
+
+                {/* Overlay Link Button */}
+                <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {project.link && (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label="View project" className="shrink-0">
-                      <Avatar className="h-8 w-8 border-2 border-cyber-blue/30 hover:border-cyber-blue transition-colors">
-                        <AvatarImage src="/lovable-uploads/profile-photo.png" alt="Philip Akekudaga" />
-                        <AvatarFallback>PA</AvatarFallback>
-                      </Avatar>
-                    </a>
+                    <Button asChild variant="secondary" className="rounded-full shadow-lg backdrop-blur-md bg-white/90 dark:bg-black/80 hover:bg-white dark:hover:bg-black">
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" /> View Project
+                      </a>
+                    </Button>
                   )}
                 </div>
-              </CardHeader>
-              <CardContent className="py-2 flex-grow">
-                <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
-              </CardContent>
-              <CardFooter className="pt-4 flex flex-col items-start space-y-4">
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, idx) => (
-                    <span key={idx} className="tech-tag">{tag}</span>
-                  ))}
+              </div>
+
+              {/* Content Section */}
+              <div className={`flex flex-col p-8 ${project.featured ? 'lg:w-2/5 justify-center' : 'flex-grow'}`}>
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">
+                    {project.date}
+                  </span>
+                  <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                    {project.organization}
+                  </span>
                 </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  asChild
-                  className="w-full border-cyber-blue text-cyber-blue hover:bg-cyber-blue/10 dark:border-cyber-blue dark:text-cyber-blue"
-                >
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" /> View Project
-                  </a>
-                </Button>
-              </CardFooter>
-            </Card>
+
+                <h3 className="text-2xl font-heading font-bold mb-3 text-cyber-navy dark:text-white group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+
+                <p className="text-gray-600 dark:text-gray-400 mb-6 line-clamp-4 leading-relaxed text-sm">
+                  {project.description}
+                </p>
+
+                <div className="mt-auto">
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.slice(0, project.featured ? 6 : 3).map((tag, idx) => (
+                      <span key={idx} className="text-xs font-medium px-2.5 py-1 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+                        {tag}
+                      </span>
+                    ))}
+                    {!project.featured && project.tags.length > 3 && (
+                      <span className="text-xs font-medium px-2.5 py-1 rounded-md bg-gray-50 dark:bg-gray-800/50 text-gray-500">
+                        +{project.tags.length - 3}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-primary hover:text-primary/80 flex items-center transition-colors"
+                      >
+                        View Details <ExternalLink className="ml-1 h-3 w-3" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-2">
+            <a href="https://github.com/akekulip" target="_blank" rel="noopener noreferrer">
+              <Github className="mr-2 h-5 w-5" /> View More on GitHub
+            </a>
+          </Button>
         </div>
       </div>
     </section>

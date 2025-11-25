@@ -64,15 +64,16 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				cyber: {
-					blue: "#0ea5e9",
-					navy: "#0f172a",
+					blue: "hsl(var(--cyber-blue))",
+					navy: "hsl(var(--cyber-navy))",
 					green: "#4ade80",
-					slate: "#64748b",
-					light: "#f8fafc"
+					slate: "hsl(var(--cyber-slate))",
+					light: "hsl(var(--cyber-light))"
 				}
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
+				heading: ['Outfit', 'sans-serif'],
 				mono: ['JetBrains Mono', 'monospace'],
 			},
 			borderRadius: {
