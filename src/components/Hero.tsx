@@ -15,25 +15,25 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 z-10">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-20">
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <div className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium tracking-wide">
+          <div className="lg:w-1/2 text-center lg:text-left animate-in fade-in slide-in-from-bottom-10 duration-1000 ease-out">
+            <div className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium tracking-wide animate-in fade-in zoom-in duration-700 delay-100">
               Available for new opportunities
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold mb-6 text-cyber-navy dark:text-white leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold mb-6 text-cyber-navy dark:text-white leading-tight animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
               Philip <br className="hidden lg:block" />
               <span className="text-primary">Akekudaga</span>
             </h1>
 
-            <h2 className="text-xl sm:text-2xl text-cyber-slate dark:text-gray-300 mb-8 font-medium max-w-2xl mx-auto lg:mx-0">
+            <h2 className="text-xl sm:text-2xl text-cyber-slate dark:text-gray-300 mb-8 font-medium max-w-2xl mx-auto lg:mx-0 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
               Cybersecurity Specialist & Risk Analyst
             </h2>
 
-            <p className="text-gray-600 dark:text-gray-400 text-lg mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-400 text-lg mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-400">
               Protecting critical infrastructure through Digital Forensics, FAIR™ Risk Quantification, and Cyber Resilience strategies.
             </p>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-12 text-base shadow-lg shadow-primary/20 transition-all hover:scale-105">
                 <a href="#projects">
                   <FileText className="mr-2 h-5 w-5" /> View My Work
@@ -47,7 +47,7 @@ const Hero = () => {
             </div>
 
             {/* Social Media Icons - Minimalist */}
-            <div className="flex justify-center lg:justify-start items-center space-x-8 text-gray-400">
+            <div className="flex justify-center lg:justify-start items-center space-x-8 text-gray-400 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-600">
               <a
                 href="https://github.com/akekulip"
                 target="_blank"
@@ -99,14 +99,14 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="lg:w-1/2 relative">
+          <div className="lg:w-1/2 relative animate-in fade-in zoom-in duration-1000 delay-300 ease-out">
             <div className="relative z-10">
-              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/10 border border-white/20 dark:border-gray-800/50">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay"></div>
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/10 border border-white/20 dark:border-gray-800/50 group">
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay group-hover:opacity-75 transition-opacity duration-500"></div>
                 <img
-                  src="/lovable-uploads/profile-photo.png"
+                  src="/profile-photo.png"
                   alt="Philip Akekudaga - Cybersecurity Specialist"
-                  className="w-full h-auto object-cover transform scale-100 hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>
@@ -124,8 +124,8 @@ const Hero = () => {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute -top-12 -right-12 w-24 h-24 bg-pattern-dots opacity-20"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 border-2 border-primary/10 rounded-full"></div>
+            <div className="absolute -top-12 -right-12 w-24 h-24 bg-pattern-dots opacity-20 animate-pulse" style={{ animationDuration: '4s' }}></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 border-2 border-primary/10 rounded-full animate-spin-slow" style={{ animationDuration: '10s' }}></div>
           </div>
         </div>
 

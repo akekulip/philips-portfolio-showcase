@@ -12,7 +12,7 @@ const Projects = () => {
       date: "2025",
       organization: "Cybersecurity Research",
       description: "Developed a comprehensive Factor Analysis of Information Risk (FAIR) platform for quantitative cyber risk assessment. The tool models threat scenarios, calculates annualized loss expectancy, and provides actionable insights for risk mitigation with advanced Monte Carlo simulations and TEF analysis.",
-      image: "/lovable-uploads/fair-risk-analysis.png",
+      image: "/images/fair-risk-analysis.png",
       tags: ["Risk Quantification", "FAIR Model", "Monte Carlo", "Threat Analysis", "React"],
       link: "https://fair.akekudaga.com/",
       featured: true
@@ -22,7 +22,7 @@ const Projects = () => {
       date: "2025",
       organization: "Research Project",
       description: "Developed a simulator using Functional Dependency Network Analysis (FDNA) to model and analyze power grid resilience against cyber-physical attacks. The tool helps utilities identify vulnerabilities and optimize resource allocation for enhanced protection.",
-      image: "/lovable-uploads/4efd6ee8-b6b5-4a83-b9d8-1699843608a6.png",
+      image: "/images/grid-resilience.png",
       tags: ["Python", "Network Analysis", "Simulation", "Security Modeling"],
       link: "https://grid-resilience-simulator.vercel.app/",
       featured: false
@@ -32,7 +32,7 @@ const Projects = () => {
       date: "2024",
       organization: "Security Initiative",
       description: "Developed an interactive tool that quantifies the potential business impact of phishing attacks based on company profile, user access patterns, and industry benchmarks. The platform provides detailed risk breakdowns across financial, operational, reputational, and systems dimensions.",
-      image: "/lovable-uploads/bebfd17e-ddc4-492d-918e-74d9c94b357c.png",
+      image: "/images/phishing-impact.png",
       tags: ["Risk Assessment", "Data Visualization", "Financial Modeling", "Security Analytics"],
       link: "https://phish-base.vercel.app/",
       featured: false
@@ -69,7 +69,8 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`group relative flex flex-col rounded-3xl overflow-hidden border border-white/50 dark:border-gray-800 bg-white dark:bg-cyber-navy shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 ${project.featured ? 'lg:col-span-2 lg:flex-row' : ''}`}
+              className={`group relative flex flex-col rounded-3xl overflow-hidden border border-white/50 dark:border-gray-800 bg-white dark:bg-cyber-navy shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-8 ${project.featured ? 'lg:col-span-2 lg:flex-row' : ''}`}
+              style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'both' }}
             >
               {/* Image Section */}
               <div className={`relative overflow-hidden ${project.featured ? 'lg:w-3/5 h-64 lg:h-auto' : 'h-56'}`}>
@@ -78,7 +79,7 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={`Screenshot of ${project.title} project`}
-                    className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700 ease-out"
                     loading="lazy"
                   />
                 ) : (
@@ -88,9 +89,9 @@ const Projects = () => {
                 )}
 
                 {/* Overlay Link Button */}
-                <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                   {project.link && (
-                    <Button asChild variant="secondary" className="rounded-full shadow-lg backdrop-blur-md bg-white/90 dark:bg-black/80 hover:bg-white dark:hover:bg-black">
+                    <Button asChild variant="secondary" className="rounded-full shadow-lg backdrop-blur-md bg-white/90 dark:bg-black/80 hover:bg-white dark:hover:bg-black transform scale-90 group-hover:scale-100 transition-all duration-300">
                       <a href={project.link} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="mr-2 h-4 w-4" /> View Project
                       </a>
@@ -110,7 +111,7 @@ const Projects = () => {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-heading font-bold mb-3 text-cyber-navy dark:text-white group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-heading font-bold mb-3 text-cyber-navy dark:text-white group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
 
@@ -121,7 +122,7 @@ const Projects = () => {
                 <div className="mt-auto">
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.slice(0, project.featured ? 6 : 3).map((tag, idx) => (
-                      <span key={idx} className="text-xs font-medium px-2.5 py-1 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+                      <span key={idx} className="text-xs font-medium px-2.5 py-1 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 transition-colors hover:bg-primary/5 hover:text-primary hover:border-primary/20">
                         {tag}
                       </span>
                     ))}
@@ -138,9 +139,9 @@ const Projects = () => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-semibold text-primary hover:text-primary/80 flex items-center transition-colors"
+                        className="text-sm font-semibold text-primary hover:text-primary/80 flex items-center transition-colors group/link"
                       >
-                        View Details <ExternalLink className="ml-1 h-3 w-3" />
+                        View Details <ExternalLink className="ml-1 h-3 w-3 transition-transform group-hover/link:translate-x-1" />
                       </a>
                     )}
                   </div>

@@ -177,16 +177,20 @@ const Experience = () => {
 
       <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent dark:before:via-gray-700">
         {experiences.map((job, index) => (
-          <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+          <div
+            key={index}
+            className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active animate-in fade-in slide-in-from-bottom-8"
+            style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'both' }}
+          >
             {/* Icon */}
-            <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white dark:border-gray-900 bg-primary/20 text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+            <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white dark:border-gray-900 bg-primary/20 text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transform transition-transform duration-500 group-hover:scale-110">
               <Briefcase className="w-4 h-4" />
             </div>
 
             {/* Content */}
-            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white dark:bg-cyber-navy border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white dark:bg-cyber-navy border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
-                <h3 className="text-xl font-heading font-bold text-cyber-navy dark:text-white">
+                <h3 className="text-xl font-heading font-bold text-cyber-navy dark:text-white group-hover:text-primary transition-colors">
                   {job.title}
                 </h3>
                 <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded whitespace-nowrap">
@@ -215,7 +219,7 @@ const Experience = () => {
               {job.skills && job.skills.length > 0 && (
                 <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-100 dark:border-gray-800">
                   {job.skills.map((skill, skillIdx) => (
-                    <Badge key={skillIdx} variant="secondary" className="text-xs font-normal bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">
+                    <Badge key={skillIdx} variant="secondary" className="text-xs font-normal bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                       {skill}
                     </Badge>
                   ))}
@@ -234,10 +238,14 @@ const Experience = () => {
 
       <div className="grid md:grid-cols-2 gap-8">
         {volunteeringConsulting.map((role, index) => (
-          <Card key={index} className="border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-all duration-300 bg-white dark:bg-cyber-navy">
+          <Card
+            key={index}
+            className="border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-white dark:bg-cyber-navy animate-in fade-in slide-in-from-bottom-8"
+            style={{ animationDelay: `${index * 200}ms`, animationFillMode: 'both' }}
+          >
             <CardContent className="p-8">
               <div className="flex items-start justify-between mb-4">
-                <div className="p-3 bg-green-500/10 rounded-xl text-green-600 dark:text-green-400">
+                <div className="p-3 bg-green-500/10 rounded-xl text-green-600 dark:text-green-400 transform transition-transform duration-500 hover:rotate-12">
                   {getTypeIcon(role.type)}
                 </div>
                 <Badge variant="outline" className="text-xs border-green-200 text-green-700 dark:border-green-900 dark:text-green-400">

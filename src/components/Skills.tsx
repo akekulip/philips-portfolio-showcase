@@ -103,10 +103,14 @@ const Skills = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {skillCategories.map((category, index) => (
-          <Card key={index} className="border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-cyber-navy">
+          <Card
+            key={index}
+            className="border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-white dark:bg-cyber-navy group animate-in fade-in slide-in-from-bottom-6"
+            style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'both' }}
+          >
             <CardContent className="p-6">
               <div className="flex items-center mb-4">
-                <div className="mr-3 p-2 bg-primary/5 rounded-lg">{category.icon}</div>
+                <div className="mr-3 p-2 bg-primary/5 rounded-lg group-hover:bg-primary/10 transition-colors duration-300">{category.icon}</div>
                 <h3 className="text-lg font-heading font-bold text-cyber-navy dark:text-white leading-tight">
                   {category.title}
                 </h3>
@@ -116,7 +120,7 @@ const Skills = () => {
                 {category.skills.map((skill, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-transparent hover:border-primary/20 hover:bg-primary/5 hover:text-primary transition-colors cursor-default"
+                    className="px-2.5 py-1 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-transparent hover:border-primary/20 hover:bg-primary/5 hover:text-primary transition-all duration-300 cursor-default hover:scale-105"
                   >
                     {skill}
                   </span>

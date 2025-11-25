@@ -30,11 +30,6 @@ const Index = () => {
       {/* Subtle background image with overlay */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white dark:from-cyber-navy dark:to-gray-900 opacity-85"></div>
-        <img
-          src="/lovable-uploads/da2aa60b-dc63-4e61-89fc-6816c0dc78ba.png"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-15 dark:opacity-10 mix-blend-multiply"
-        />
       </div>
 
       {/* Content with higher z-index */}
