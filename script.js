@@ -371,7 +371,7 @@
       return [
         'EMAIL:    akekulip@gmail.com',
         'GITHUB:   github.com/akekulip',
-        'LINKEDIN: linkedin.com/in/akekulip',
+        'LINKEDIN: linkedin.com/in/pakekudaga',
         'LOCATION: Kingston, Rhode Island',
         'STATUS:   Open to summer 2026 internships (F-1 CPT)'
       ].join('\n');

@@ -1466,6 +1466,11 @@ input { font: inherit; color: inherit; }
   transition: all 150ms;
   text-decoration: none;
 }
+.li-badge-wrap {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
 .resume-btn:hover {
   background: var(--accent-muted);
   border-color: var(--accent);
