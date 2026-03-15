@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 | Philip Akekudaga</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230a0e14'/><text x='4' y='23' font-family='monospace' font-size='20' fill='%234da8da'>>&lowbar;</text></svg>">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Space Mono', monospace;
+      background: #0a0e14;
+      color: #d4dce8;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .container { max-width: 520px; padding: 40px 20px; }
+    .code {
+      font-size: 6rem;
+      font-weight: 700;
+      color: #4da8da;
+      line-height: 1;
+      margin-bottom: 16px;
+      text-shadow: 0 0 40px rgba(77,168,218,0.3);
+    }
+    .msg {
+      font-size: 1.1rem;
+      color: #6b7f99;
+      margin-bottom: 24px;
+    }
+    .terminal {
+      background: #111820;
+      border: 1px solid #1e2a3a;
+      border-radius: 6px;
+      padding: 16px 20px;
+      text-align: left;
+      font-size: 0.8rem;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    .prompt { color: #38c172; }
+    .cmd { color: #d4dce8; }
+    .output { color: #e53e3e; }
+    .output2 { color: #6b7f99; }
+    a.home {
+      display: inline-block;
+      padding: 10px 24px;
+      color: #4da8da;
+      border: 1px solid #1e2a3a;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 150ms;
+    }
+    a.home:hover {
+      background: rgba(77,168,218,0.12);
+      border-color: #4da8da;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="code">404</div>
+    <div class="msg">Packet dropped. No matching rule in forwarding table.</div>
+    <div class="terminal">
+      <div><span class="prompt">philip@cypher-lab:~$ </span><span class="cmd">curl -I this-page</span></div>
+      <div class="output">HTTP/1.1 404 Not Found</div>
+      <div class="output2">X-Reason: no route to host</div>
+      <div class="output2">X-Suggestion: try the homepage</div>
+    </div>
+    <a href="/" class="home">cd ~/ (go home)</a>
+  </div>
+</body>
+</html>
