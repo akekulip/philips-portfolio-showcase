@@ -1467,9 +1467,8 @@ input { font: inherit; color: inherit; }
   text-decoration: none;
 }
 .li-badge-wrap {
-  margin-top: 12px;
+  margin-top: 16px;
   display: flex;
-  justify-content: center;
 }
 .resume-btn:hover {
   background: var(--accent-muted);
